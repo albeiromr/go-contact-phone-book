@@ -2,6 +2,7 @@ package options
 
 import (
 	"contact-phone-book/utils"
+	"contact-phone-book/logs"
 	"fmt"
 )
 
@@ -10,7 +11,7 @@ func HandleShowArgument(argumento string){
 		if value.Id == argumento {
 			fmt.Printf("registro (%v) encontrado, el valor es: %v\n", argumento, utils.Data[index])
 		} else {
-			//do somthing to log errors
+			logs.CreateLog(argumento)
 		}
 	}
 }

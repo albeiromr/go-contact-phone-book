@@ -3,11 +3,14 @@ package main
 import (
 	"contact-phone-book/options"
 	"contact-phone-book/utils"
+	"contact-phone-book/logs"
 	"fmt"
 	"os"
 )
 
 func main() {
+
+	logs.CreateLogsFile()
 	utils.GeneratesRecords()
 
 	arguments := os.Args
