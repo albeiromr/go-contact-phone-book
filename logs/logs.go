@@ -24,6 +24,6 @@ func CreateLogsFile() *os.File {
 func CreateLog(id string){
 	file := CreateLogsFile()
 	showError := log.New(file, "showError: ", log.Ldate|log.Ltime|log.Llongfile)
-	showError.Printf("el registro (%v) no exixte en la base de datos", id)
+	showError.Printf("el registro (%v) no existe en la base de datos", id)
 	defer file.Close()
 }

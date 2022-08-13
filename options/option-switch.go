@@ -19,7 +19,7 @@ func DetectInput(option string) {
 	case option == "-s" && len(os.Args) > 2:
 		HandleShowArgument(os.Args[2])
 	default:
-		fmt.Println("Debe especificar una opción, ejemplo -l|-s <arguments>")
+		fmt.Println("Debe especificar una opción valida, ejemplo -l|-s <arguments>")
 		return
 	}
 }

@@ -16,12 +16,12 @@ func main() {
 	arguments := os.Args
 	switch {
 	case len(arguments) < 2 || len(arguments) > 3:
-		fmt.Println("Debe especificar una opción, ejemplo -l|-s <arguments>")
+		fmt.Println("Debe especificar una opción valida, ejemplo -l|-s <arguments>")
 		return
 	case len(arguments) != 1:
 		options.DetectInput(arguments[1])
 	default:
-		fmt.Println("Debe especificar una opción, ejemplo -l|-s <arguments>")
+		fmt.Println("Debe especificar una opción valida, ejemplo -l|-s <arguments>")
 		return
 	}
 
