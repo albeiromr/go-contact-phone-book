@@ -4,20 +4,33 @@ import (
 	"contact-phone-book/models"
 	"math/rand"
 	"strconv"
-	"github.com/cip8/autoname"
+	"time"
 )
 
 var Data []models.Person = []models.Person{}
 
 //crea datos de prueba aleatorios
-func GeneratesRecords(){
+func GeneratesRecords() {
 	for i := 0; i < 20; i++ {
 		entry := models.Person{
-			CompleteName: autoname.Generate(),
-			Id: generateStringId(),
+			Name: generateName(10),
+			Id:           generateStringId(),
 		}
 		Data = append(Data, entry)
 	}
+}
+
+//genera un nombre random con un length dado
+func generateName(length int) string {
+	rand.Seed(time.Now().UnixNano())
+	charset := "abcdefghijklmnopqrstuvwxyz"
+	byteSlice := make([]byte, length)
+	for i := 0; i < length; i++ {
+		char := charset[rand.Intn(len(charset)-1)]
+		byteSlice[i] = char
+	}
+	name := string(byteSlice)
+	return name
 }
 
 //crea un string con números random entre 0 y 50
