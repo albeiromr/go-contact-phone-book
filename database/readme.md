@@ -1,0 +1,1 @@
+en esta carpeta encontrará el archivo de base de datos que tiene la información de cada uno de los clientes

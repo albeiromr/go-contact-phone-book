@@ -1,28 +1,20 @@
 package main
 
 import (
-	"contact-phone-book/options"
-	"contact-phone-book/utils"
-	"contact-phone-book/logs"
-	"fmt"
-	"os"
+	"go-contact-phone-book/file-factory"
 )
+
 
 func main() {
 
-	logs.CreateLogsFile()
-	utils.GeneratesRecords()
+	csvFileError := filefactory.UseFileFactory("database", filefactory.CsvFile)
+	if csvFileError != nil {
+		panic(csvFileError)
+	}
 
-	arguments := os.Args
-	switch {
-	case len(arguments) < 2 || len(arguments) > 3:
-		fmt.Println("Debe especificar una opción valida, ejemplo -l|-s <arguments>")
-		return
-	case len(arguments) != 1:
-		options.DetectInput(arguments[1])
-	default:
-		fmt.Println("Debe especificar una opción valida, ejemplo -l|-s <arguments>")
-		return
+	logsFileError := filefactory.UseFileFactory("logs", filefactory.LogFile)
+	if logsFileError != nil {
+		panic(logsFileError)
 	}
 
 }

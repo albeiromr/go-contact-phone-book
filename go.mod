@@ -1,6 +1,3 @@
-module contact-phone-book
+module go-contact-phone-book
 
-go 1.18
-
-require (
-)
+go 1.19

@@ -1,0 +1,1 @@
+en esta carpeta encontrará el archivo de logs donde estarán los errores generados por las consultas de los clientes a la base de datos
